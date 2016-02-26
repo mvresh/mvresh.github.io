@@ -1,2 +1,3 @@
 name: Varun Resh
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
