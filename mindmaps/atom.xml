@@ -1,11 +1,27 @@
 ---
-layout: default
-title: Varun's Mindmaps
+layout: feed
 ---
-	<h1>{{ page.title }}</h1>
-	<ul class="mindmaps">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-	  {% for post in site.mindmaps %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-	  {% endfor %}
-	</ul>
+	<title>Varun's Mind maps</title>
+	<link href="http://mvresh.github.io/mindmaps/atom.xml" rel="self"/>
+	<link href="http://mvresh.github.io/mindmaps"/>
+	<updated>{{ site.time | date_to_xmlschema }}</updated>
+	<id>http://mvresh.github.io/mindmaps</id>
+	<author>
+		<name>Varun Resh</name>
+		<email>mvresh@gmail.com</email>
+	</author>
+
+	{% for post in site.mindmaps %}
+		<entry>
+			<title>{{ post.title }}</title>
+			<link href="http://mvresh.github.io{{ post.url }}"/>
+			<updated>{{ post.date | date_to_xmlschema }}</updated>
+			<id>http://mvresh.github.io/{{ post.id }}</id>
+			<content type="html">{{ post.content | xml_escape }}</content>
+		</entry>
+	{% endfor %}
+
+</feed>
