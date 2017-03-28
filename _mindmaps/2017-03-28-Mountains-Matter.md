@@ -1,5 +1,5 @@
 ---
-layout: mindmaps
+layout: post
 title: Mountains Matter
 date: 2017-03-28
 ---
