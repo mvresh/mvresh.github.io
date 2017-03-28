@@ -14,13 +14,13 @@ layout: feed
 		<email>mvresh@gmail.com</email>
 	</author>
 
-	{% for post in site.mindmaps %}
+	{% for mindmap in site.mmaps %}
 		<entry>
-			<title>{{ post.title }}</title>
-			<link href="http://mvresh.github.io{{ post.url }}"/>
-			<updated>{{ post.date | date_to_xmlschema }}</updated>
-			<id>http://mvresh.github.io/{{ post.id }}</id>
-			<content type="html">{{ post.content | xml_escape }}</content>
+			<title>{{ mindmap.title }}</title>
+			<link href="http://mvresh.github.io{{ mindmap.url }}"/>
+			<updated>{{ mindmap.date | date_to_xmlschema }}</updated>
+			<id>http://mvresh.github.io/{{ mindmap.id }}</id>
+			<content type="html">{{ mindmap.content | xml_escape }}</content>
 		</entry>
 	{% endfor %}
 
