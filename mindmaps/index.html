@@ -5,7 +5,7 @@ title: Varun's Mindmaps
 	<h1>{{ page.title }}</h1>
 	<ul class="mindmaps">
 
-	  {% for post in site.mindmaps %}
-	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	  {% for mindmap in site.mindmaps %}
+	    <li><span>{{ mindmap.date | date_to_string }}</span> » <a href="{{ mindmap.url }}" title="{{ mindmap.title }}">{{ mindmap.title }}</a></li>
 	  {% endfor %}
 </ul>
